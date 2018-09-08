@@ -2,48 +2,52 @@
 <html>
 <head>
     <title>Form Register</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <form onsubmit="return validate();" action="form-action.html" name="formRegister" method="post">
-        <table width="600">
-            <tr>
-                <td width="20%">Name</td>
-                <td>
-                    <input type="text" name="name" id="name" placeholder="Your name">
-                </td>
-            </tr>
-            <tr>
-                <td width="20%">Email</td>
-                <td>
-                    <input type="email" name="email" id="email" placeholder="Your email">
-                </td>
-            </tr>
-            <tr>
-                <td width="20%">Address</td>
-                <td>
-                    <input type="text" name="address" id="address" placeholder="Your address">
-                </td>
-            </tr>
-            <tr>
-                <td width="20%">Phone</td>
-                <td>
-                    <input type="number" name="phone" id="phone" placeholder="Your phone">
-                </td>
-            </tr>
-            <tr>
-                <td width="20%">Bio</td>
-                <td>
-                    <textarea name="bio" id="bio" placeholder="Write something about you"></textarea>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <input type="submit" name="submit" value="Register" onclick="setCookie();">
-                </td>
-            </tr>
-        </table>
-    </form>
+    <div class="registerForm">
+        <form onsubmit="return validate();" action="form-action.html" name="formRegister" method="post">
+            <p>Please fill your details below:</p>
+            <table width="350">
+                <tr>
+                    <td width="30%">Name <span class="required">*</span></td>
+                    <td>
+                        <input type="text" name="name" id="name" placeholder="Your name">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30%">Email <span class="required">*</span></td>
+                    <td>
+                        <input type="email" name="email" id="email" placeholder="Your email">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30%">Address <span class="required">*</span></td>
+                    <td>
+                        <input type="text" name="address" id="address" placeholder="Your address">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30%">Phone <span class="required">*</span></td>
+                    <td>
+                        <input type="number" name="phone" id="phone" placeholder="Your phone">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="30%">Bio <span class="required">*</span></td>
+                    <td>
+                        <textarea name="bio" id="bio" placeholder="Write something about you"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" name="submit" value="Register" onclick="setCookie();">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
     <script>
         let d = document;
         function validate() {

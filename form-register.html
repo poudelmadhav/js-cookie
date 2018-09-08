@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Form Validation</title>
+    <title>Form Register</title>
 </head>
 <body>
     <form onsubmit="return validate();" action="form-action.html" name="formRegister" method="post">
@@ -9,19 +9,31 @@
             <tr>
                 <td width="20%">Name</td>
                 <td>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" placeholder="Your name">
                 </td>
             </tr>
             <tr>
                 <td width="20%">Email</td>
                 <td>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" placeholder="Your email">
                 </td>
             </tr>
             <tr>
                 <td width="20%">Address</td>
                 <td>
-                    <input type="text" name="address" id="address">
+                    <input type="text" name="address" id="address" placeholder="Your address">
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">Phone</td>
+                <td>
+                    <input type="number" name="phone" id="phone" placeholder="Your phone">
+                </td>
+            </tr>
+            <tr>
+                <td width="20%">Bio</td>
+                <td>
+                    <textarea name="bio" id="bio" placeholder="Write something about you"></textarea>
                 </td>
             </tr>
             <tr>
@@ -38,6 +50,8 @@
             let name = d.querySelector("#name").value;
             let email = d.querySelector("#email").value;
             let address = d.querySelector("#address").value;
+            let phone = d.querySelector("#phone").value;
+            let bio = d.querySelector("#bio").value;
             if (name === "") {
                 alert("Please enter your name.");
                 return false;
@@ -50,6 +64,14 @@
                 alert("Please enter your address.");
                 return false;
             }
+            if (phone === "") {
+                alert("Please enter your phone.");
+                return false;
+            }
+            if (bio === "") {
+                alert("Please enter your bio.");
+                return false;
+            }
             return true;
         }
 
@@ -58,9 +80,13 @@
             let yourname = d.querySelector("#name").value;
             let youremail = d.querySelector("#email").value;
             let youraddress = d.querySelector("#address").value;
-            d.cookie = "yourname=" + yourname + "; expires=Fri, 14 Sep 2018 12:00:00 UTC; path=/";
-            d.cookie = "youremail=" + youremail + "; expires=Fri, 14 Sep 2018 12:00:00 UTC; path=/";
-            d.cookie = "youraddress=" + youraddress + "; expires=Fri, 14 Sep 2018 12:00:00 UTC; path=/";
+            let yourphone = d.querySelector("#phone").value;
+            let yourbio = d.querySelector("#bio").value;
+            d.cookie = "yourname=" + yourname + "; expires=Fri, 21 Sep 2018 12:00:00 UTC; path=/";
+            d.cookie = "youremail=" + youremail + "; expires=Fri, 21 Sep 2018 12:00:00 UTC; path=/";
+            d.cookie = "youraddress=" + youraddress + "; expires=Fri, 21 Sep 2018 12:00:00 UTC; path=/";
+            d.cookie = "yourphone=" + yourphone + "; expires=Fri, 21 Sep 2018 12:00:00 UTC; path=/";
+            d.cookie = "yourbio=" + yourbio + "; expires=Fri, 21 Sep 2018 12:00:00 UTC; path=/";
         }
     </script>
 </body>

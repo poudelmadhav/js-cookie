@@ -14,20 +14,24 @@
 		d = document;
 		let data = d.querySelector("#data");
 
-		let mycookies = d.cookie.split(";");
-		console.log(mycookies);
-		let name, email, address;
+		let mycookies = d.cookie.split("; ");
+		let values, name, email, address, phone, bio;
 		for (let i = 0; i < mycookies.length; i++) {
 			values = mycookies[i].split("=");
-			console.log(values[0]);
 			if (values[0] === 'yourname') {
 				name = values[1];
 			}
-			if (values[0] === ' youremail') {
+			if (values[0] === 'youremail') {
 				email = values[1];
 			}
-			if (values[0] === ' youraddress') {
+			if (values[0] === 'youraddress') {
 				address = values[1];
+			}
+			if (values[0] === 'yourphone') {
+				phone = values[1];
+			}
+			if (values[0] === 'yourbio') {
+				bio = values[1];
 			}
 		}
 
@@ -43,7 +47,15 @@
 							'<tr>' +
 								'<td>Address</td>' +
 								'<td>' + address + '</td>' +
-							'</tr>'
+							'</tr>' +
+							'<tr>' +
+								'<td>Phone</td>' +
+								'<td>' + phone + '</td>' +
+							'</tr>' +
+							'<tr>' +
+								'<td>Bio</td>' +
+								'<td>' + bio + '</td>' +
+							'</tr>' +
 						'</table>';
 		data.innerHTML = content;
 
